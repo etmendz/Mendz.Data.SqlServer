@@ -11,8 +11,8 @@ SqlServerDataSettingOption | Provides the data setting options for SQL Server ac
 Mendz.Data.Common defines an IDbDataContext interface, which is implemented as DbDataContextBase.
 SqlServerDbDataContext derives from DbDataContextBase, which requires the abstract BuildContext() method to be implemented.
 The internal implementation uses Mendz.Data.DataSettingOptions to build the data context.
-SqlServerDbDataContext.BuildContext() will first look for "SqlServerConnectionString".
-If it's not available, it will look for "SqlServerExpressConnectionString".
+SqlServerDbDataContext.BuildContext() will first look for SqlServerDataSettingOption.Name.
+If it's not available, it will look for SqlServerDataSettingOption.AlternativeName.
 
 SqlServerDbDataContext assumes that appsettings.json contains an entry/section for DataSettings.
 ```JSON
