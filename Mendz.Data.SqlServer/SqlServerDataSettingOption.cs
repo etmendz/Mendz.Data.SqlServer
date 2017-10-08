@@ -6,12 +6,12 @@
     public static class SqlServerDataSettingOption
     {
         /// <summary>
-        /// Gets or sets the connection string.
+        /// Gets or sets the connection string name.
         /// </summary>
         public static string Name { get; set;  } = "SqlServerConnectionString";
 
         /// <summary>
-        /// Gets or sets the alternative connection string.
+        /// Gets or sets the alternative connection string name.
         /// </summary>
         public static string AlternativeName { get; set; }  = "SqlServerExpressConnectionString";
     }
