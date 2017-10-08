@@ -1,5 +1,5 @@
 # Mendz.Data.SqlServer
-Provides a generic Mendz.Data-aware context for ADO.Net-compatible access to SQL Server databases.
+Provides a generic Mendz.Data-aware context for ADO.Net-compatible access to SQL Server databases. [Wiki](https://github.com/etmendz/Mendz.Data.SqlServer/wiki)
 ## Namespace
 Mendz.Data.SqlServer
 ### Contents
