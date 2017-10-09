@@ -34,7 +34,7 @@ In the application startup or initialization routine, the DataSettings should be
         }
 ```
 Mendz.Data-aware repositories implement DbRepositoryBase, which expects a Mendz.Data-aware data context.
-Using Mendz.Data.SqlServer.SqlServerDbDataContext, a repository skeleton can look like the following:
+Using SqlServerDbDataContext, a repository skeleton can look like the following:
 ```C#
     public class TestRepository : DbRepositoryBase<SqlServerDbDataContext>
     {
