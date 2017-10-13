@@ -8,7 +8,9 @@ Name | Description
 SqlServerDbDataContext | Provides the database context for an SQL Server database.
 SqlServerDataSettingOption | Provides the data setting options for SQL Server access.
 #### SqlServerDbDataContext
-Mendz.Data.Common defines an IDbDataContext interface, which is implemented as DbDataContextBase.
+Mendz.Data.Common defines an IDbDataContext interface, 
+which is implemented as GenericDbDataContextBase, 
+which is derived by DbDataContextBase.
 SqlServerDbDataContext derives from DbDataContextBase, which requires the abstract BuildContext() method to be implemented.
 The internal implementation uses Mendz.Data.DataSettingOptions to build the data context.
 SqlServerDbDataContext.BuildContext() will first look for SqlServerDataSettingOption.Name.
