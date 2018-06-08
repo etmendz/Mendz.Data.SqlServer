@@ -5,14 +5,14 @@
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Authors>Mendz</Authors>
     <Company>Mendz</Company>
-    <Copyright>© 2017 Mendz. All rights reserved.</Copyright>
+    <Copyright>© 2018 Mendz. All rights reserved.</Copyright>
     <PackageLicenseUrl>http://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/etmendz/Mendz.Data.SqlServer</PackageProjectUrl>
     <RepositoryUrl>https://github.com/etmendz/Mendz.Data.SqlServer</RepositoryUrl>
     <PackageTags>data database context ado-net sql-server</PackageTags>
     <Description>Provides a generic Mendz.Data-aware context for ADO.Net-compatible access to SQL Server databases.</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.1.1</Version>
+    <Version>1.1.2</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -24,13 +24,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Mendz.Data\Mendz.Data\Mendz.Data.csproj" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.5.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="System.Data.SqlClient">
-      <HintPath>..\..\..\..\..\..\Program Files\dotnet\sdk\NuGetFallbackFolder\system.data.sqlclient\4.4.0\ref\netstandard2.0\System.Data.SqlClient.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\..\Mendz.Data\Mendz.Data\Mendz.Data.csproj" />
   </ItemGroup>
 
 </Project>
