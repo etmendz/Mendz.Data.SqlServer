@@ -1,6 +1,6 @@
 ﻿using Mendz.Data.Common;
+using Microsoft.Data.SqlClient;
 using System.Data;
-using System.Data.SqlClient;
 using System.Threading;
 
 namespace Mendz.Data.SqlServer
@@ -15,10 +15,7 @@ namespace Mendz.Data.SqlServer
             string name = SqlServerDataSettingOption.Name;
             if (!DataSettingOptions.ConnectionStrings.ContainsKey(SqlServerDataSettingOption.Name))
             {
-                if (DataSettingOptions.ConnectionStrings.ContainsKey(SqlServerDataSettingOption.AlternativeName))
-                {
-                    name = DataSettingOptions.ConnectionStrings[SqlServerDataSettingOption.AlternativeName];
-                }
+                if (DataSettingOptions.ConnectionStrings.ContainsKey(SqlServerDataSettingOption.AlternativeName)) name = DataSettingOptions.ConnectionStrings[SqlServerDataSettingOption.AlternativeName];
             }
             return new SqlConnection(DataSettingOptions.ConnectionStrings[name]);
         }
@@ -31,10 +28,10 @@ namespace Mendz.Data.SqlServer
         /// </remarks>
         public async void CreateContextAsync()
         {
-            if (_context == null)
+            if (Context == null)
             {
-                _context = BuildContext();
-                await ((SqlConnection)_context).OpenAsync();
+                Context = BuildContext();
+                await ((SqlConnection)Context).OpenAsync().ConfigureAwait(false);
             }
         }
 
@@ -47,10 +44,10 @@ namespace Mendz.Data.SqlServer
         /// </remarks>
         public async void CreateContextAsync(CancellationToken cancellationToken)
         {
-            if (_context == null)
+            if (Context == null)
             {
-                _context = BuildContext();
-                await ((SqlConnection)_context).OpenAsync(cancellationToken);
+                Context = BuildContext();
+                await ((SqlConnection)Context).OpenAsync(cancellationToken).ConfigureAwait(false);
             }
         }
     }
